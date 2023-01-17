@@ -156,7 +156,6 @@ class EuCentralBank < Money::Bank::VariableExchange
   def check_currency_available(currency)
     currency_string = currency.to_s
     return true if currency_string == "EUR"
-    return true if CURRENCIES.include?(currency_string)
     raise CurrencyUnavailable, "No rates available for #{currency_string}"
   end
 
